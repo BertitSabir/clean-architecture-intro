@@ -9,7 +9,7 @@ def test_get(use_cas_mock, domain_rooms, room_dicts, client):
     use_cas_mock.return_value = domain_rooms
 
     response = client.get("/rooms/")
-    assert json.loads(response.json()) == room_dicts
+    assert response.json() == room_dicts
     use_cas_mock.assert_called()
     assert response.status_code == 200
     assert response.headers['content-type'] == 'application/json'

@@ -1,6 +1,9 @@
 import json
+from typing import Any
 
-from fastapi import APIRouter, Depends, FastAPI
+from fastapi import APIRouter, Depends, Response
+from fastapi.responses import JSONResponse
+import orjson
 
 from src.application.config import Settings, get_settings
 from src.domain import entities
@@ -38,12 +41,18 @@ room_router = APIRouter(
 )
 
 
-@room_router.get("/")
+class CustomResponse(Response):
+    media_type = "application/json"
+
+    def render(self, content: Any) -> bytes:
+        assert orjson is not None, "orjson must be installed"
+        return orjson.dumps(content, option=orjson.OPT_INDENT_2)
+
+
+@room_router.get("/", response_class=CustomResponse, response_model=list[entities.room.Room])
 async def info(settings: Settings = Depends(get_settings)):
     repo = MemRepo(rooms)
-    print(repo)
     result = room_list_use_case(repo)
-    print(result)
 
-    return json.dumps(result, cls=RoomJsonEncoder)
+    return result
 
