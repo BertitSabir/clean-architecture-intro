@@ -1,15 +1,12 @@
-import json
 from typing import Any
 
 from fastapi import APIRouter, Depends, Response
-from fastapi.responses import JSONResponse
 import orjson
 
-from src.application.config import Settings, get_settings
-from src.domain import entities
-from src.repositories.memrepo import MemRepo
-from src.serializers.room import RoomJsonEncoder
-from src.use_cases.room_list import room_list_use_case
+from application.config import Settings, get_settings
+from rentomatic.domain import entities
+from rentomatic.repositories.memrepo import MemRepo
+from rentomatic.use_cases.room_list import room_list_use_case
 
 
 rooms = [

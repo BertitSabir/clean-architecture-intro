@@ -1,5 +1,5 @@
-from src.domain.entities.room import Room
-from src.repositories.memrepo import MemRepo
+from rentomatic.domain.entities.room import Room
+from rentomatic.repositories.memrepo import MemRepo
 
 
 def test_repository_list_without_parameters(room_dicts):

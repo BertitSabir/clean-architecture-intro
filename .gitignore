@@ -62,5 +62,5 @@ target/
 .python-version
 
 # Env files
-/src/.env
+/.env
 /.idea/*

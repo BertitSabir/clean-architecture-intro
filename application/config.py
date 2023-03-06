@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     TITLE: str
 
     class Config:
-        env_file = 'src/.env'
+        env_file = '.env'
         env_file_encoding = 'utf-8'
         case_sensitive = False
 

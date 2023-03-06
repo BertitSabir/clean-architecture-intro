@@ -1,8 +1,8 @@
 from pprint import pprint
 
-from src.domain.entities.room import Room
-from src.repositories.memrepo import MemRepo
-from src.use_cases.room_list import room_list_use_case
+from rentomatic.domain.entities.room import Room
+from rentomatic.repositories.memrepo import MemRepo
+from rentomatic.use_cases.room_list import room_list_use_case
 
 
 def main():

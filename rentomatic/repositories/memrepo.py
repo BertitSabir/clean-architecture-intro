@@ -1,6 +1,6 @@
 from typing import List
 
-from src.domain.entities.room import Room
+from rentomatic.domain.entities.room import Room
 
 
 class MemRepo:

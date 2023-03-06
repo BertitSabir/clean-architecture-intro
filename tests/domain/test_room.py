@@ -1,8 +1,8 @@
 import json
 import uuid
 
-from src.domain.entities.room import Room
-from src.serializers.room import RoomJsonEncoder
+from rentomatic.domain.entities.room import Room
+from rentomatic.serializers.room import RoomJsonEncoder
 
 
 def test_room_model_init():

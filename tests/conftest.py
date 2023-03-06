@@ -1,4 +1,3 @@
-from pprint import pprint
 from typing import Generator
 
 import pytest
@@ -6,8 +5,8 @@ import factory
 from faker import Faker
 from starlette.testclient import TestClient
 
-from src.domain.entities.room import Room
-from src.main import app
+from rentomatic.domain.entities.room import Room
+from application.main import app
 
 fake = Faker()
 Faker.seed(0)

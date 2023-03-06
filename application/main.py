@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from src.application.config import get_settings
-from src.application.rest import room
+from application.config import get_settings
+from application.rest import room
 
 settings = get_settings()
 
